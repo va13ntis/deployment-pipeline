@@ -28,7 +28,7 @@ jobs:
       - run: echo "- Simulate and test the artifact"
 
   development:
-    needs: test-artifact
+    needs: build
     runs-on: ubuntu-latest
     environment: Development
     steps:
@@ -66,4 +66,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "- Test the artifact in the production environment"
-      - run: echo "# All tests and deployments have been completed successfully!"
+      - run: echo "# All tests and deployments have been completed successfully!" >> $GITHUB_STEP_SUMMARY
